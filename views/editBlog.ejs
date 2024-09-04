@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<section id="editBlog">
+  <div class="container">
+    <h1>Edit posts</h1>
+    <div class="main-container">
+      <% name.forEach(element => { %>
+      <div class="content-container">
+        <form action="/editBlog" method="post">
+          <input
+            type="hidden"
+            value="<%- name.indexOf(element) %>"
+            name="index"
+          />
+          <h2><%= element %> <input type="submit" value="Edit" /></h2>
+          <p><%= content %></p>
+        </form>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

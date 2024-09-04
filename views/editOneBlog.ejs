@@ -2,19 +2,21 @@
 
 <section id="postBlog">
   <div class="container">
-    <h1>Post your thoughts</h1>
     <div class="main-container">
-      <form action="/postBlog" method="post">
+      <form action="/editOneBlog" method="post">
+        <input type="hidden" value="<%- index %>" name="index" />
         <input
           type="text"
           name="title"
           placeholder="Enter the title"
+          value="<%= name  %>"
           required
         />
         <input
           type="text"
           name="content"
           placeholder="Enter the content"
+          value="<%= content %>"
           required
         />
         <input type="submit" value="submit" />
